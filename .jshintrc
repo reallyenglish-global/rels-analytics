@@ -21,8 +21,8 @@
   "jquery"        : false,
   "asi"           : true,
   "browserify"    : true,
-  "unused"        : false,    // allow unused vars
-  "quotmark"      : false,    // allow mixed quotes
+  "unused"        : true,    // allow unused vars
+  "quotmark"      : true,    // allow mixed quotes
   "camelcase"     : false,    // allow camel case
   "eqnull"        : false,    // Tolerate use of `== null`.
   "funcscope"     : false,    // Tolerate declarations of variables inside of control structures while accessing them later from the outside.
@@ -36,8 +36,6 @@
   "scripturl"     : false,    // Tolerate script-targeted URLs.
   "predef":
   [
-    "sco",
-    "Raygun",
     "confirm",
     "alert",
     "define",
@@ -55,11 +53,6 @@
     "context",
     "waits",
     "waitsFor",
-    "runs",
-    "fixtures",
-    "device",
-    "cordova",
-    "instrument",
-    "CryptoJS"
+    "runs"
   ]
 }
