@@ -1,0 +1,30 @@
+node_modules/*
+.ruby-version
+
+.sass-cache/*
+bower_components/rels-ui/.sass-cache/*
+
+build/*
+
+demo/index.html
+demo/rels-activity.css
+demo/activities.js
+demo/rels-strategy.css
+demo/rels-lesson.css
+demo/images/*
+demo/fonts/*
+demo/rels-lesson.js
+demo/vendor.js
+
+test/spec-manifest.js
+test/vendor.js
+
+.tmp
+
+###
+# direnv
+.envrc
+
+###
+# osx
+.DS_Store
