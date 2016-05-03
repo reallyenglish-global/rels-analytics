@@ -8,21 +8,15 @@
     "underscore": "latest"
   },
   "devDependencies": {
-    "resolve": "latest",
-    "vinyl-source-stream": "latest",
     "require-dir": "latest",
     "gulp": "latest",
-    "glob": "latest",
-    "gulp-jshint": "latest",
     "jshint-stylish": "latest",
-    "browserify": "latest",
-    "browser-sync": "latest",
     "mocha": "latest",
     "chai": "*",
     "chai-as-promised": "*",
-    "colors": "*",
     "sinon": "latest",
-    "sinon-chai": "*"
+    "sinon-chai": "*",
+    "rels-gulp": "git+ssh://git@github.com/reallyenglish/rels-gulp#ew_additional_clean"
   },
   "engine-strict" : true,
   "engines": {
