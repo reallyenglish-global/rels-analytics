@@ -16,7 +16,7 @@
     "chai-as-promised": "*",
     "sinon": "latest",
     "sinon-chai": "*",
-    "rels-gulp": "git+ssh://git@github.com/reallyenglish/rels-gulp#ew_additional_clean"
+    "rels-gulp": "git+ssh://git@github.com/reallyenglish/rels-gulp"
   },
   "engine-strict" : true,
   "engines": {

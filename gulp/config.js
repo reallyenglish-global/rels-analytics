@@ -1,16 +1,15 @@
 'use strict';
 
 var test = './test/';
-var lib = './lib/';
-var analytics = './lib/rels-analytics';
 
 module.exports = {
 
   shared: {
-
     paths: {
       alljs: ['lib/**/*.js'],
-      test: ['test/**/*.spec.js']
+      alltest: ['test/**/*.spec.js'],
+      testSupport: ['./test/support/**/*.js'],
+      testManifest: ['./test/spec-manifest']
     },
 
     vendor: {},
@@ -24,16 +23,12 @@ module.exports = {
       }
     }
   },
+
   test: {
-    watched: {
-      support: [test +'support/**/*.js'],
-      manifest: [test + 'spec-manifest']
-    },
     build: {
       source: 'spec-manifest.js',
       bundle: {
-        entries: [test + 'support/setup.js', test + '/**/*.spec.js'
-        ]
+        entries: [test + 'support/setup.js', test + '/**/*.spec.js']
       }
     },
     vendor: {
