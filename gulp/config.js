@@ -6,10 +6,8 @@ module.exports = {
 
   shared: {
     paths: {
-      alljs: ['lib/**/*.js'],
-      alltest: ['test/**/*.spec.js'],
-      testSupport: ['./test/support/**/*.js'],
-      testManifest: ['./test/spec-manifest']
+      build: ['lib/**/*.js'],
+      test: ['test/**/*.spec.js']
     },
 
     vendor: {},
@@ -24,7 +22,17 @@ module.exports = {
     }
   },
 
+  demo: {
+    watched: {}
+  },
+
   test: {
+    watched: {
+      specs: ['test/**/*.spec.js'],
+      support: ['test/support/**/*.js'],
+      build: ['lib/**/*.js'],
+      manifest: ['./test/spec-manifest']      
+    },
     build: {
       source: 'spec-manifest.js',
       bundle: {
