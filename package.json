@@ -1,11 +1,12 @@
 {
   "name": "rels-analytics",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Rels Analytics",
   "repository": "https://github.com/reallyenglish/rels-analytics",
   "license": "UNLICENSED",
   "dependencies": {
-    "underscore": "latest"
+    "underscore": "latest",
+    "jquery": "latest"
   },
   "devDependencies": {
     "resolve": "latest",
