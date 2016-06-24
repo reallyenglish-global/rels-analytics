@@ -16,6 +16,7 @@ describe('RelsAnalytics', function() {
     var tracker;
 
     before(function(done) {
+      window.ga = sinon.stub();
       sandbox.spy(Tracker, 'activate');
       sandbox.spy(subject, 'addObserver');
       subject.activate('google-analytics-web', '1234').then(function(t) {
