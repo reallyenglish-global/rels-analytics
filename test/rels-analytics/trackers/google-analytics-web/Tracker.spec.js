@@ -13,7 +13,7 @@ describe('Google Analytics Web Tracker', function() {
   };
 
   before(function(done) {
-    Tracker.activate().then(function() {
+    Tracker.activate('property-id').then(function() {
       sandbox.spy(Tracker, 'ga');
       done();
     });
