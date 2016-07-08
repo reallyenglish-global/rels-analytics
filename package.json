@@ -33,7 +33,7 @@
   },
   "scripts": {
     "test": "gulp test",
-    "semantic-release": "semantic-release pre && semantic-release post",
+    "semantic-release": "semantic-release pre && semantic-release post"
   },
   "release": {
     "getLastRelease": "./node_modules/last-release-git-tag/index.js",
