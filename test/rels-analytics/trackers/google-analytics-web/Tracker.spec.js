@@ -3,7 +3,6 @@
 describe('Google Analytics Web Tracker', function() {
 
   var sandbox = sinon.sandbox.create();
-  window.ga = sandbox.spy();
   var Tracker = require('../../../../lib/rels-analytics/trackers/google-analytics-web/Tracker');
   var lesson = {
     id: 'foo',
@@ -13,13 +12,16 @@ describe('Google Analytics Web Tracker', function() {
     interaction: { position: 3 }
   };
 
-  before(function() {
-    Tracker.activate();
+  before(function(done) {
+    Tracker.activate('property-id').then(function() {
+      sandbox.spy(Tracker, 'ga');
+      done();
+    });
   });
 
   after(function() {
     sandbox.restore();
-    delete window.ga;
+    Tracker.deactivate();
   });
 
   describe('interaction:start', function() {
@@ -28,7 +30,7 @@ describe('Google Analytics Web Tracker', function() {
     });
 
     it('reports a pageview', function() {
-      expect(window.ga).to.be.calledWith('send', {
+      expect(Tracker.ga).to.be.calledWith('send', {
         hitType: 'pageview',
         page: '/lesson/foo/section/0/stage/1/activity/2/interaction/3'
       });
@@ -41,7 +43,7 @@ describe('Google Analytics Web Tracker', function() {
     });
 
     it('reports a event', function() {
-      expect(window.ga).to.be.calledWith('send', {
+      expect(Tracker.ga).to.be.calledWith('send', {
         hitType: 'event',
         eventCategory: 'Feedback',
         eventAction: 'show',
@@ -63,7 +65,7 @@ describe('Google Analytics Web Tracker', function() {
     });
 
     it('reports a user timing', function() {
-      expect(window.ga).to.be.calledWith('send', {
+      expect(Tracker.ga).to.be.calledWith('send', {
         hitType: 'timing',
         timingCategory: 'Activity',
         timingVar: 'activity_duration',
@@ -72,5 +74,4 @@ describe('Google Analytics Web Tracker', function() {
       });
     });
   });
-
 });
