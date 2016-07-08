@@ -1,17 +1,12 @@
 'use strict';
 
-var test = './test/';
-
 module.exports = {
-
   shared: {
+    vendor: {},
     paths: {
       build: ['lib/**/*.js'],
       test: ['test/**/*.spec.js']
     },
-
-    vendor: {},
-
     browserSync: {
       dev: {
         port: 3000,
@@ -21,11 +16,9 @@ module.exports = {
       }
     }
   },
-
   demo: {
     watched: {}
   },
-
   test: {
     watched: {
       specs: ['test/**/*.spec.js'],
@@ -36,7 +29,10 @@ module.exports = {
     build: {
       source: 'spec-manifest.js',
       bundle: {
-        entries: [test + 'support/setup.js', test + '/**/*.spec.js']
+        entries: [
+          './test/**/*.spec.js',
+          './test/support/setup.js'
+        ]
       }
     },
     vendor: {
