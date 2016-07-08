@@ -2,7 +2,11 @@
   "name": "rels-analytics",
   "version": "2.0.0",
   "description": "Rels Analytics",
-  "repository": "https://github.com/reallyenglish/rels-analytics",
+  "main": "lib/rels-analytics.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reallyenglish/rels-analytics"
+  },
   "license": "UNLICENSED",
   "dependencies": {
     "underscore": "latest",
@@ -17,11 +21,30 @@
     "chai-as-promised": "*",
     "sinon": "latest",
     "sinon-chai": "*",
-    "rels-gulp": "git+ssh://git@github.com/reallyenglish/rels-gulp"
+    "rels-gulp": "git+ssh://git@github.com/reallyenglish/rels-gulp",
+    "ghooks": "^1.3.2",    
+    "last-release-git-tag": "latest",    
+    "semantic-release": "^4.3.5",    
+    "validate-commit-msg": "^2.6.1"
   },
   "engine-strict" : true,
   "engines": {
     "node": ">=4.0.0"
   },
-  "main": "lib/rels-analytics.js"
+  "scripts": {
+    "test": "gulp test",
+    "semantic-release": "semantic-release pre && semantic-release post",
+  },
+  "release": {
+    "getLastRelease": "./node_modules/last-release-git-tag/index.js",
+    "debug": false
+  },
+  "config": {
+    "validate-commit-msg": {
+      "helpMessage": "Valid types are: feat, fix, docs, style, refactor, perf, test, chore, revert \nNote that 'feat' and 'fix' will create new releases as will having BREAKING CHANGE: in the footer of your commit message."
+    },
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    }
+  }
 }
