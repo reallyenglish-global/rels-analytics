@@ -5,24 +5,19 @@
   "repository": "https://github.com/reallyenglish/rels-analytics",
   "license": "UNLICENSED",
   "dependencies": {
-    "underscore": "latest"
+    "underscore": "latest",
+    "jquery": "latest"
   },
   "devDependencies": {
-    "resolve": "latest",
-    "vinyl-source-stream": "latest",
     "require-dir": "latest",
     "gulp": "latest",
-    "glob": "latest",
-    "gulp-jshint": "latest",
     "jshint-stylish": "latest",
-    "browserify": "latest",
-    "browser-sync": "latest",
     "mocha": "latest",
     "chai": "*",
     "chai-as-promised": "*",
-    "colors": "*",
     "sinon": "latest",
-    "sinon-chai": "*"
+    "sinon-chai": "*",
+    "rels-gulp": "git+ssh://git@github.com/reallyenglish/rels-gulp"
   },
   "engine-strict" : true,
   "engines": {
