@@ -14,24 +14,23 @@ describe('RelsAnalytics', function() {
   describe('activate', function() {
     var Tracker = require('../../lib/rels-analytics/trackers/google-analytics-web/Tracker');
     var tracker;
-    before(function() {
+
+    before(function(done) {
+      window.ga = sinon.stub();
       sandbox.spy(Tracker, 'activate');
       sandbox.spy(subject, 'addObserver');
-      tracker = subject.activate('google-analytics-web');
+      subject.activate('google-analytics-web', '1234').then(function(t) {
+        tracker = t;
+        done();
+      });
     });
+
     after(function() {
       sandbox.restore();
+      tracker.deactivate();
     });
     it('activates the requested tracker', function() {
-      expect(Tracker.activate).to.be.called;
-    });
-
-    it('return the requested tracker', function() {
-      expect(tracker).to.eql(Tracker);
-    });
-
-    it('adds the tracker as an observer', function() {
-      expect(subject.addObserver).to.be.calledWith(tracker)
+      expect(Tracker.activate).to.be.calledWith('1234');
     });
   })
 });
