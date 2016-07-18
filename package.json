@@ -21,7 +21,7 @@
     "chai-as-promised": "*",
     "sinon": "latest",
     "sinon-chai": "*",
-    "rels-gulp": "git+ssh://git@github.com/reallyenglish/rels-gulp#v1.0.1",
+    "rels-gulp": "git+ssh://git@github.com/reallyenglish/rels-gulp#v1.0.2",
     "ghooks": "^1.3.2",
     "last-release-git-tag": "latest",
     "validate-commit-msg": "^2.6.1",
