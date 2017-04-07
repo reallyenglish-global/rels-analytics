@@ -52,6 +52,40 @@ describe('Google Analytics Web Tracker', function() {
     });
   });
 
+  describe('network-monitor:anomaly', function() {
+    before(function() {
+      Tracker.onNetworkMonitorAnomaly({
+        url: 'some url',
+        last: 3500
+      });
+    });
+
+    it('reports a event', function() {
+      expect(Tracker.ga).to.be.calledWith('send', {
+        hitType: 'event',
+        eventCategory: 'network-metrics',
+        eventAction: 'anomaly',
+        eventLabel: 'some url',
+        eventValue: 3500,
+      });
+    });
+  });
+
+  describe('network-monitor:blocked', function() {
+    before(function() {
+      Tracker.onNetworkMonitorBlocked({duration: 250})
+    });
+
+    it('reports a event', function() {
+      expect(Tracker.ga).to.be.calledWith('send', {
+        hitType: 'event',
+        eventCategory: 'network-metrics',
+        eventAction: 'blocked',
+        eventValue: 250,
+      });
+    });
+  });
+
   describe('activity:start -> activity:complete', function() {
     before(function() {
       sandbox.useFakeTimers();
