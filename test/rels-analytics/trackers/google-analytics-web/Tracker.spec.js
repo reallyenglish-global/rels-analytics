@@ -73,7 +73,7 @@ describe('Google Analytics Web Tracker', function() {
 
   describe('network-monitor:blocked', function() {
     before(function() {
-      Tracker.onNetworkMonitorBlocked(250)
+      Tracker.onNetworkMonitorBlocked({duration: 250})
     });
 
     it('reports a event', function() {
