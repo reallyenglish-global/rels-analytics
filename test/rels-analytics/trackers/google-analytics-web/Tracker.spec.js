@@ -1,8 +1,9 @@
 'use strict';
 
-describe('Google Analytics Web Tracker', function() {
+var lolex = require('lolex')
+var clock;
 
-  var sandbox = sinon.sandbox.create();
+describe('Google Analytics Web Tracker', function() {
   var Tracker = require('../../../../lib/rels-analytics/trackers/google-analytics-web/Tracker');
   var lesson = {
     id: 'foo',
@@ -14,13 +15,13 @@ describe('Google Analytics Web Tracker', function() {
 
   before(function(done) {
     Tracker.activate('property-id').then(function() {
-      sandbox.spy(Tracker, 'ga');
+      sinon.spy(Tracker, 'ga');
       done();
     });
   });
 
   after(function() {
-    sandbox.restore();
+    sinon.restore();
     Tracker.deactivate();
   });
 
@@ -88,14 +89,15 @@ describe('Google Analytics Web Tracker', function() {
 
   describe('activity:start -> activity:complete', function() {
     before(function() {
-      sandbox.useFakeTimers();
+      clock && clock.uninstall()
+      clock = lolex.install()
       Tracker.onActivityStart(lesson);
-      sandbox.clock.tick(1);
+      clock.tick(1);
       Tracker.onActivityComplete(lesson);
     });
 
     after(function() {
-      sandbox.clock.restore();
+      clock.uninstall();
     });
 
     it('reports a user timing', function() {
