@@ -3,7 +3,6 @@
 describe('RelsAnalytics', function() {
 
   var subject = require('../../lib/rels-analytics/RelsAnalytics');
-  var sandbox = sinon.sandbox.create();
 
   describe('trackers', function() {
     it('has a google-analytics-web tracker', function() {
@@ -17,8 +16,8 @@ describe('RelsAnalytics', function() {
 
     before(function(done) {
       window.ga = sinon.stub();
-      sandbox.spy(Tracker, 'activate');
-      sandbox.spy(subject, 'addObserver');
+      sinon.spy(Tracker, 'activate');
+      sinon.spy(subject, 'addObserver');
       subject.activate('google-analytics-web', '1234').then(function(t) {
         tracker = t;
         done();
@@ -26,7 +25,7 @@ describe('RelsAnalytics', function() {
     });
 
     after(function() {
-      sandbox.restore();
+      sinon.restore();
       tracker.deactivate();
     });
     it('activates the requested tracker', function() {
