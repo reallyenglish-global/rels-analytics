@@ -1,20 +1,13 @@
-sudo: false
 language: node_js
-cache:
-  directories:
-    - node_modules
+dist: xenial
+node_js:
+  - '12'
 notifications:
   email: false
-node_js:
-  - '10'
-before_install:
-  - npm i -g npm@^6.0.0
-install:
-  - npm install
-before_script:
-  - npm prune
-after_success:
-  - npm run --verbose semantic-release
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+deploy:
+  - provider: script
+    edge: true
+    script: node ./scripts/release
+    on: 
+      branch: production
+
