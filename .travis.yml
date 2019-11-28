@@ -9,5 +9,5 @@ deploy:
     edge: true
     script: node ./scripts/release
     on: 
-      branch: production
+      branch: master
 
