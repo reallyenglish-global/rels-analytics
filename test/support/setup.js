@@ -1,4 +1,3 @@
-/* globals mocha, chai */
 import jsdom from 'jsdom-global'
 import sinon from 'sinon'
 import chai from 'chai'
