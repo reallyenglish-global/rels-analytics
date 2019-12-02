@@ -1,7 +1,7 @@
 module.exports = {
   test: {
     mocha: {
-      file: './test/support/setup.js',
+      file: './test/setup.js',
       reporter: 'spec',
     },
   },
