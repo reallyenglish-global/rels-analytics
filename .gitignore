@@ -2,6 +2,7 @@ node_modules
 
 test/spec-manifest.js
 test/vendor.js
+dist
 
 ###
 # osx

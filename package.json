@@ -53,9 +53,10 @@
   },
   "scripts": {
     "test": "gulp test --exit",
-    "prepare": "cd node_modules/rels-gulp && npm run build && cd ../../",
+    "prepare": "npm run build && cd node_modules/rels-gulp && npm run build && cd ../../",
     "format": "prettier -c lib/**/*{.js*,.scss}",
-    "lint": "eslint lib"
+    "lint": "eslint lib",
+    "build": "babel ./lib --out-dir dist"
   },
   "release": {
     "getLastRelease": "./node_modules/last-release-git-tag/index.js",
