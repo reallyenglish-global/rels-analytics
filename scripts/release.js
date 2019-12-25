@@ -13,7 +13,7 @@ if (!['master'].includes(TRAVIS_BRANCH)) {
 
 semanticRelease({
   branch: 'master',
-  repositoryUrl: 'git@github.com:reallyenglish/rels-analytics.git',
+  repositoryUrl: 'git@github.com:reallyenglish-global/rels-analytics.git',
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',

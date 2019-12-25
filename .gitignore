@@ -3,7 +3,7 @@ node_modules
 test/spec-manifest.js
 test/vendor.js
 dist
-
+package-lock.json
 ###
 # osx
 .DS_Store
