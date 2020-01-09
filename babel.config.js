@@ -3,7 +3,7 @@ const config = {
     [
       '@babel/preset-env',
       {
-        debug: true,
+        debug: false,
         targets: {
           browsers: [
             'Explorer 11',
