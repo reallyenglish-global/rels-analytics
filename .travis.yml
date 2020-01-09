@@ -1,13 +1,13 @@
 language: node_js
 dist: xenial
-node_js:
-  - '12'
 notifications:
   email: false
-deploy:
-  - provider: script
-    edge: true
-    script: node ./scripts/release
-    on: 
-      branch: master
-
+node_js:
+  - '12'
+script:
+  - run-p test lint format
+after_success:
+  - semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
