@@ -13,8 +13,7 @@
     "underscore": "latest"
   },
   "devDependencies": {
-    "lolex": "latest",
-    "rels-gulp": "git+ssh://git@github.com/reallyenglish-global/rels-gulp.git#v5.2.7"
+    "rels-gulp": "git+ssh://git@github.com/reallyenglish-global/rels-gulp.git#v5.2.8"
   },
   "engine-strict": true,
   "engines": {
@@ -27,36 +26,5 @@
     "format": "prettier -c \"lib/**/*{.js*,.scss}\"",
     "lint": "eslint lib",
     "build": "./node_modules/.bin/babel ./lib --out-dir dist"
-  },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            [
-              "@babel/preset-env",
-              {
-                "debug": false,
-                "targets": {
-                  "browsers": [
-                    "Explorer 11",
-                    "last 1 Chrome versions",
-                    "last 1 FireFox versions",
-                    "last 1 Safari versions",
-                    "last 1 Edge versions"
-                  ]
-                },
-                "useBuiltIns": "usage",
-                "corejs": {
-                  "version": "3",
-                  "proposals": "true"
-                }
-              }
-            ]
-          ]
-        }
-      ]
-    ]
   }
 }
