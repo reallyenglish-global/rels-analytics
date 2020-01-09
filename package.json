@@ -9,12 +9,12 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "underscore": "latest",
-    "jquery": "latest"
+    "jquery": "latest",
+    "underscore": "latest"
   },
   "devDependencies": {
     "lolex": "latest",
-    "rels-gulp": "git+ssh://git@github.com/reallyenglish-global/rels-gulp.git#v5.2.6"
+    "rels-gulp": "git+ssh://git@github.com/reallyenglish-global/rels-gulp.git#v5.2.7"
   },
   "engine-strict": true,
   "engines": {
