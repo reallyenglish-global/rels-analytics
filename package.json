@@ -2,7 +2,7 @@
   "name": "rels-analytics",
   "version": "2.0.0",
   "description": "Rels Analytics",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/reallyenglish-global/rels-analytics"
@@ -22,9 +22,12 @@
   },
   "scripts": {
     "test": "gulp test --exit",
-    "postinstall": "npm run build",
     "format": "prettier -c \"lib/**/*{.js*,.scss}\"",
-    "lint": "eslint lib",
-    "build": "./node_modules/.bin/babel ./lib --out-dir dist"
+    "lint": "eslint lib"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   }
 }
