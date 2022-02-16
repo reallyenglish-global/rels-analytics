@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rels Analytics Demo</title>
+  </head>
+  <body>
+    <label for="hit">Select Analytic</label>
+    <select id="hit" title="hit">
+      <option value="ActivityDuration">Activity Duration</option>
+      <option value="FeedbackShown">Feedback Shown</option>
+      <option value="NetworkMonitorAnomaly">Network Monitor Anomaly</option>
+      <option value="NetworkMonitorBlocked">Network Monitor Blocked</option>
+      <option value="Pageview">Pageview</option>
+      <option value="Recognized">Recognized</option>
+    </select>
+    <hr />
+
+    <div id="description"></div>
+    <pre id="payload"></pre>
+    <script src="./demo.js"></script>
+    <footer>
+      See rels-web/services/analytics for an example of subscribing to EventBus broadcasts
+    </footer>
+  </body>
+</html>

@@ -9,12 +9,32 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "rels-scripts": "../rels-scripts"
+    "rels-scripts": "git+ssh://git@github.com/reallyenglish-global/rels-scripts.git"
   },
   "scripts": {
     "test": "rels-scripts test",
     "format": "rels-scripts format",
     "lint": "rels-scripts lint",
-    "prepare": "rels-scripts init"
+    "prepare": "rels-scripts init",
+    "start": "rels-scripts start"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

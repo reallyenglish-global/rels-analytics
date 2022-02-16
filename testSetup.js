@@ -1,4 +1,4 @@
-const fetch = (resource, init) => {
+const fetch = (resource) => {
   switch (resource) {
     case (resource.match(/www.google-analytics.com/) || {}).input:
       return new Promise((resolve) => {
