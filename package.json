@@ -9,14 +9,15 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "rels-scripts": "git+ssh://git@github.com/reallyenglish-global/rels-scripts.git#v1.0.14"
+    "rels-scripts": "git+ssh://git@github.com/reallyenglish-global/rels-scripts.git#v1.0.15"
   },
   "scripts": {
     "test": "rels-scripts test",
     "format": "rels-scripts format",
     "lint": "rels-scripts lint",
-    "pre": "rels-scripts init",
-    "start": "rels-scripts start"
+    "prepare": "rels-scripts init",
+    "start": "rels-scripts start",
+    "build": "rels-scripts build"
   },
   "release": {
     "plugins": [
