@@ -9,7 +9,7 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "rels-scripts": "git+ssh://git@github.com/reallyenglish-global/rels-scripts.git"
+    "rels-scripts": "git+ssh://git@github.com/reallyenglish-global/rels-scripts.git#v1.0.14"
   },
   "scripts": {
     "test": "rels-scripts test",
