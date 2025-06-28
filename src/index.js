@@ -5,6 +5,10 @@ import { GA } from './trackers/ga'
 const RelsAnalytics = {
   activate(name, options) {
     return this.trackers[name].activate(options).then((tracker) => {
+      if (!tracker) {
+        console.log('Could not activate tracker', name, options)
+        return false
+      }
       return tracker.observe(RelsAnalytics, RELAY)
     })
   },
