@@ -1,6 +1,7 @@
-import { GOOGLE_ANALYTICS_WEB, RELAY } from './constants'
+import { GOOGLE_ANALYTICS_WEB, GOOGLE_ANALYTICS_4_WEB, RELAY } from './constants'
 import { Observable } from './mixins'
 import { GA } from './trackers/ga'
+import { GA4 } from './trackers/ga4'
 
 const RelsAnalytics = {
   activate(name, options) {
@@ -15,6 +16,7 @@ const RelsAnalytics = {
 
   trackers: {
     [GOOGLE_ANALYTICS_WEB]: GA,
+    [GOOGLE_ANALYTICS_4_WEB]: GA4,
   },
 }
 
