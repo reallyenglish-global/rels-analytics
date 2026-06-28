@@ -1,4 +1,5 @@
 export const GOOGLE_ANALYTICS_WEB = 'google-analytics-web'
+export const GOOGLE_ANALYTICS_4_WEB = 'google-analytics-4-web'
 export const PAGEVIEW = 'pageview'
 export const EVENT = 'event'
 export const TIMING = 'timing'
